@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "613249839213",
+    "project_id": "cachimbapp-pfm",
+    "storage_bucket": "cachimbapp-pfm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613249839213:android:0bdff8b9d73fa23db2cf64",
+        "android_client_info": {
+          "package_name": "com.example.pruebaapp2temporizador"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613249839213-gundhedba6367p6gg7hvdasqpaoe6bat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_zzEM0vDYzSLktZqRRWF41UEbTdvPdoY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613249839213-gundhedba6367p6gg7hvdasqpaoe6bat.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
