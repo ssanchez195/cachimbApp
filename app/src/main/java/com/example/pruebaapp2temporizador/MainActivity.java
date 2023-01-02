@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
         TimerTask timerTask= new TimerTask() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, PruebappCachimbas.class);
+                Intent intent = new Intent(MainActivity.this, Utilidades.class);
                 startActivity(intent);
                 finish();
             }

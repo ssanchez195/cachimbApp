@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000"
-    tools:context=".PruebappCronometro">
+    tools:context=".CronometroActivity">
 
     <Button
         android:id="@+id/buttonPlay"
@@ -48,7 +48,7 @@
         android:layout_width="218dp"
         android:layout_height="53dp"
         android:layout_marginTop="32dp"
-        android:background="#29BCE4"
+        android:background="#56AA00FF"
         android:contextClickable="false"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"

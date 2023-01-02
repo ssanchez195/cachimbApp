@@ -9,12 +9,13 @@
 
     <EditText
         android:id="@+id/txt_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="316dp"
+        android:layout_height="43dp"
         android:layout_marginTop="164dp"
         android:ems="10"
         android:hint="@string/txt_email"
         android:inputType="textEmailAddress"
+        android:textAlignment="center"
         android:textColor="#673AB7"
         android:textColorHint="#673AB7"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,12 +26,13 @@
 
     <EditText
         android:id="@+id/txt_pass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="316dp"
+        android:layout_height="43dp"
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="@string/txt_pass"
         android:inputType="textPassword"
+        android:textAlignment="center"
         android:textColor="#673AB7"
         android:textColorHint="#673AB7"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,20 +43,23 @@
 
     <Button
         android:id="@+id/btn_iniciarSesion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
         android:layout_marginTop="36dp"
+        android:backgroundTint="@color/design_default_color_secondary"
         android:text="Iniciar sesion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_pass" />
 
+
     <Button
         android:id="@+id/btn_registrarse"
-        android:layout_width="147dp"
+        android:layout_width="170dp"
         android:layout_height="48dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/design_default_color_secondary_variant"
         android:text="Registrarse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

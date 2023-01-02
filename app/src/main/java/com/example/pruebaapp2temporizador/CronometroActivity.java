@@ -16,7 +16,7 @@ import android.widget.Toast;
 //HACER QUE CUANDO SE LE DE AL INICIO SUENE EL BURBUJEO DE UNA CACHIMBA
 //File -> new -> Service
 
-public class PruebappCronometro extends AppCompatActivity {
+public class CronometroActivity extends AppCompatActivity {
 
     boolean Started;
     CountDownTimer cuenta;
@@ -31,7 +31,7 @@ public class PruebappCronometro extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pruebapp_cronometro);
+        setContentView(R.layout.activity_cronometro);
         btn_start = (Button)findViewById(R.id.buttonPlay);
 
         Started = true;
@@ -65,7 +65,7 @@ public class PruebappCronometro extends AppCompatActivity {
             minute = 360000;
         else if(selection.equals("Carbones solos"))
             minute = 360000;
-         else
+        else
             minute = 300000;
 
         if (Started) {
@@ -86,7 +86,7 @@ public class PruebappCronometro extends AppCompatActivity {
                 @Override
                 public void onFinish() {
                     if (!Started) {
-                        MediaPlayer mp = MediaPlayer.create(PruebappCronometro.this, R.raw.ninocantando);
+                        MediaPlayer mp = MediaPlayer.create(CronometroActivity.this, R.raw.ninocantando);
                         mp.start();
                     }
                 }

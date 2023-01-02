@@ -3,9 +3,10 @@
     <string name="txt_cachimbApp">cachimbApp</string>
     <string name="txt_Bienvenido">Tu aplicación dedicada al mundo del humo</string>
 
-    <string name="txt_email">Introduzca su email</string>
+    <string name="txt_email">Email</string>
     <string name="txt_pass">Password</string>
 
+    <string name="button_Aleatory">Generar</string>
     <string name="button_Iniciar">Iniciar</string>
     <string name="button_Stop">Parar</string>
     <string name="button_Reiniciar">Reiniciar</string>

@@ -3,12 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Sergio/AndroidStudioProjects/PruebaApp2Temporizador/app/src/main/res/drawable/backgradient.xml" value="0.2203125" />
+        <entry key="..\:/Users/Sergio/AndroidStudioProjects/PruebaApp2Temporizador/app/src/main/res/drawable/btngradient.xml" value="0.2203125" />
+        <entry key="..\:/Users/Sergio/AndroidStudioProjects/PruebaApp2Temporizador/app/src/main/res/drawable/buttongradient.xml" value="0.2203125" />
         <entry key="..\:/Users/Sergio/AndroidStudioProjects/PruebaApp2Temporizador/app/src/main/res/drawable/splash_screen.xml" value="0.2203125" />
-        <entry key="..\:/Users/Sergio/AndroidStudioProjects/PruebaApp2Temporizador/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/Sergio/AndroidStudioProjects/PruebaApp2Temporizador/app/src/main/res/layout/activity_cronometro.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Sergio/AndroidStudioProjects/PruebaApp2Temporizador/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/Sergio/AndroidStudioProjects/PruebaApp2Temporizador/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Sergio/AndroidStudioProjects/PruebaApp2Temporizador/app/src/main/res/layout/activity_pruebapp_cachimbas.xml" value="0.25" />
         <entry key="..\:/Users/Sergio/AndroidStudioProjects/PruebaApp2Temporizador/app/src/main/res/layout/activity_pruebapp_cronometro.xml" value="0.33" />
         <entry key="..\:/Users/Sergio/AndroidStudioProjects/PruebaApp2Temporizador/app/src/main/res/layout/activity_pruebapp_vapers.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Sergio/AndroidStudioProjects/PruebaApp2Temporizador/app/src/main/res/layout/activity_ruleta.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Sergio/AndroidStudioProjects/PruebaApp2Temporizador/app/src/main/res/layout/activity_utils.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Sergio/AndroidStudioProjects/PruebaApp2Temporizador/app/src/main/res/layout/content_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Sergio/AndroidStudioProjects/PruebaApp2Temporizador/app/src/main/res/layout/fragment_first.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/Sergio/AndroidStudioProjects/PruebaApp2Temporizador/app/src/main/res/layout/fragment_second.xml" value="0.18854166666666666" />
