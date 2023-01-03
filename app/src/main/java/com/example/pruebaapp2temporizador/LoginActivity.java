@@ -10,14 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginActivity extends AppCompatActivity {
 
-    FirebaseFirestore mFirestore;
     FirebaseAuth mAuth;
 
     Button boton_registro;
@@ -33,7 +30,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
-        mFirestore = FirebaseFirestore.getInstance();
 
         boton_registro = (Button)findViewById(R.id.btn_registrarse);
         boton_inicioSesion = (Button)findViewById(R.id.btn_iniciarSesion);

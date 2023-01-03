@@ -14,14 +14,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PruebaApp2Temporizador">
         <activity
+            android:name=".GuardarSaboresActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".CronometroActivity"
             android:exported="false" />
@@ -34,8 +37,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen">
-        </activity>
+            android:theme="@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen"></activity>
     </application>
 
 </manifest>
