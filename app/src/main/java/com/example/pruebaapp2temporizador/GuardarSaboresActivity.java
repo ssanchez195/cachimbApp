@@ -6,9 +6,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Map;
@@ -33,15 +31,13 @@ public class GuardarSaboresActivity extends AppCompatActivity {
         String descripcion = txt_descripcionSabor.getText().toString();
 
         int primaryKeySP = preferences.getAll().size() + 1;
-        System.out.println(primaryKeySP);
 
         if(txt_nombreSabor.getText() != null && !preferences.contains(nombre)){
             SharedPreferences.Editor sabor_editor = preferences.edit();
-            Bundle bundle = new Bundle();
-            bundle.putString(nombre, descripcion);
+            String datos = nombre + "/" + descripcion;
 
-            sabor_editor.putString("" + primaryKeySP, bundle.toString());
-            sabor_editor.commit();
+            sabor_editor.putString("" + primaryKeySP, datos);
+            sabor_editor.apply();
 
             Toast.makeText(this, "El sabor ha sido guardado", Toast.LENGTH_SHORT).show();
             txt_nombreSabor.setText("");
@@ -51,20 +47,23 @@ public class GuardarSaboresActivity extends AppCompatActivity {
         }
     }
 
+    //Recuerda que los sabores estan guardados como WTF/Descripcion
     public void eliminarSabor(View view){
         SharedPreferences preferences = getSharedPreferences("sabores", Context.MODE_PRIVATE);
         String nombre = txt_nombreSabor.getText().toString();
+        Map<String, ?> allEntries = preferences.getAll();
 
-        if(txt_nombreSabor.getText() != null && preferences.contains(nombre)){
-            SharedPreferences.Editor sabor_editor = preferences.edit();
-            sabor_editor.remove(nombre);
-            sabor_editor.commit();
+        for (Map.Entry<String, ?> entrada : allEntries.entrySet()) {
+            SharedPreferences.Editor editor = preferences.edit();
+            String clave = entrada.getKey();
+            String nomYDesc = entrada.getValue().toString();
 
-            Toast.makeText(this, "El sabor se ha eliminado", Toast.LENGTH_SHORT).show();
-            txt_nombreSabor.setText("");
-            txt_descripcionSabor.setText("");
-        } else {
-            Toast.makeText(this, "Este sabor no se encuentra guardado", Toast.LENGTH_SHORT).show();
+            if (nomYDesc.contains(nombre)  && nombre.length() >= 3) {
+                System.out.println("Se ha borrado el sabor " + nomYDesc);
+                editor.remove(clave);
+                editor.apply();
+                break;
+            }
         }
     }
 }

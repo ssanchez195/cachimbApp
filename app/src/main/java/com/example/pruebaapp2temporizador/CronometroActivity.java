@@ -12,9 +12,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//HACER QUE SE SIGA EJECUTANDO EN SEGUNDO PLANO EL CRONO (SERVICE)
-//HACER QUE CUANDO SE LE DE AL INICIO SUENE EL BURBUJEO DE UNA CACHIMBA
-//File -> new -> Service
 
 public class CronometroActivity extends AppCompatActivity {
 
@@ -23,10 +20,6 @@ public class CronometroActivity extends AppCompatActivity {
     Spinner spinnerMinu;
     Button btn_start;
     TextView toShow;
-
-    //SeekBar barraVolumen;
-    //AudioManager audioManager;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

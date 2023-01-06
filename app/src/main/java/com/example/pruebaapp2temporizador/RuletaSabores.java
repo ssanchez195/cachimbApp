@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Map;
 
@@ -30,21 +31,27 @@ public class RuletaSabores extends AppCompatActivity {
         txt_sabor = (TextView)findViewById(R.id.txt_nombre);
         txt_descripcion = (EditText)findViewById(R.id.txt_descripcion);
 
-        //Al hacer el mathRandom (id) y recoger el sabor, haremos que los datos se muestren o no al recuperarlos
     }
 
+
+    //Al generar un valor random es como si se borrara tambien, y no entiendo por que ocurre esto
     public void generateRandom(View view){
         SharedPreferences preferences = getSharedPreferences("sabores", Context.MODE_PRIVATE);
+        valorAleatorio = (int)((preferences.getAll().size() * Math.random()) + 1);
+        String datos = preferences.getString(valorAleatorio.toString(), "");
 
-        int primaryKeySP = preferences.getAll().size();
-        System.out.println(primaryKeySP);
+        if(datos != "" && datos != "="){
+            //Este if si tiene valores pero no los recoge
+            //Seguramente entre pero te saca de la aplicacion, asi que deberia de darle un repaso
+            String[] separador = datos.split("/");
+            System.out.println(separador[0].replace("Bundle[{" ,""));
+            System.out.println(separador[1].replace("}]", ""));
 
-        valorAleatorio = (int)(primaryKeySP * Math.random());
-        System.out.println(valorAleatorio);
-
-        //Con el valor aleatorio tomaremos el valor del maximo idSabor
-        if(valorAleatorio != null){
-
+            txt_sabor.setText(separador[0].replace("Bundle[{" ,""));
+            txt_descripcion.setText(separador[1].replace("}]", ""));
+        } else {
+            startActivity(new Intent(RuletaSabores.this, GuardarSaboresActivity.class));
+            Toast.makeText(this, "Debes introducir tus sabores", Toast.LENGTH_SHORT).show();
         }
     }
 
