@@ -61,4 +61,19 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_nombre"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
+    <Button
+        android:id="@+id/btn_volver"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/design_default_color_secondary_variant"
+        android:onClick="prevActivity"
+        app:icon="?attr/homeAsUpIndicator"
+        app:layout_constraintEnd_toStartOf="@+id/btn_input"
+        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

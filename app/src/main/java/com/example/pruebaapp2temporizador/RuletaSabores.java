@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Map;
 
 
 public class RuletaSabores extends AppCompatActivity {
@@ -34,15 +33,12 @@ public class RuletaSabores extends AppCompatActivity {
     }
 
 
-    //Al generar un valor random es como si se borrara tambien, y no entiendo por que ocurre esto
     public void generateRandom(View view){
         SharedPreferences preferences = getSharedPreferences("sabores", Context.MODE_PRIVATE);
         valorAleatorio = (int)((preferences.getAll().size() * Math.random()) + 1);
         String datos = preferences.getString(valorAleatorio.toString(), "");
 
         if(datos != "" && datos != "="){
-            //Este if si tiene valores pero no los recoge
-            //Seguramente entre pero te saca de la aplicacion, asi que deberia de darle un repaso
             String[] separador = datos.split("/");
             System.out.println(separador[0].replace("Bundle[{" ,""));
             System.out.println(separador[1].replace("}]", ""));
@@ -57,5 +53,11 @@ public class RuletaSabores extends AppCompatActivity {
 
     public void addFlavoursIntent(View view){
         startActivity(new Intent(RuletaSabores.this, GuardarSaboresActivity.class));
+        finish();
+    }
+
+    public void prevActivity(View view){
+        startActivity(new Intent(RuletaSabores.this, Utilidades.class));
+        finish();
     }
 }

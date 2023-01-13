@@ -2,6 +2,7 @@ package com.example.pruebaapp2temporizador;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -18,6 +19,7 @@ public class CronometroActivity extends AppCompatActivity {
     boolean Started;
     CountDownTimer cuenta;
     Spinner spinnerMinu;
+    Button btn_volver;
     Button btn_start;
     TextView toShow;
 
@@ -30,6 +32,7 @@ public class CronometroActivity extends AppCompatActivity {
         Started = true;
         spinnerMinu = (Spinner)findViewById(R.id.spinnerMinutos);
         toShow = (TextView)findViewById(R.id.txt_Crono);
+        btn_volver = (Button)findViewById(R.id.btn_volver);
 
         String options[] = new String[6];
         options[0] = ("Desplegar opciones");
@@ -41,6 +44,13 @@ public class CronometroActivity extends AppCompatActivity {
 
         ArrayAdapter <String> valores = new ArrayAdapter<>(this, R.layout.spinner_item_cronometroopciones, options);
         spinnerMinu.setAdapter(valores);
+
+        btn_volver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CronometroActivity.this, Utilidades.class));
+            }
+        });
     }
 
     public void buttonPlay(View vista) {
@@ -62,7 +72,7 @@ public class CronometroActivity extends AppCompatActivity {
             minute = 300000;
 
         if (Started) {
-            //The "If" does to restart if the CountDownTimer is on
+            //The "If" hace que se restablezca si el CountDownTimer está funcionando
             final long valor = minute;
             cuenta = new CountDownTimer(valor, 1000) {
                 @Override

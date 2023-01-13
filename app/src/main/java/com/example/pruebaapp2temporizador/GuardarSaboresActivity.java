@@ -3,6 +3,7 @@ package com.example.pruebaapp2temporizador;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,7 @@ public class GuardarSaboresActivity extends AppCompatActivity {
 
         txt_nombreSabor = (EditText) findViewById(R.id.txt_nombreSabor);
         txt_descripcionSabor = (EditText)findViewById(R.id.txt_descripcionSabor);
+
     }
 
     public void agregarSabor(View view){
@@ -32,6 +34,7 @@ public class GuardarSaboresActivity extends AppCompatActivity {
 
         int primaryKeySP = preferences.getAll().size() + 1;
 
+        //Los sabores son guardados uniendo la descripcion y en nombre porque SharedPreferences no deja guardar 3 valores si no es asi
         if(txt_nombreSabor.getText() != null && !preferences.contains(nombre)){
             SharedPreferences.Editor sabor_editor = preferences.edit();
             String datos = nombre + "/" + descripcion;
@@ -47,7 +50,6 @@ public class GuardarSaboresActivity extends AppCompatActivity {
         }
     }
 
-    //Recuerda que los sabores estan guardados como WTF/Descripcion
     public void eliminarSabor(View view){
         SharedPreferences preferences = getSharedPreferences("sabores", Context.MODE_PRIVATE);
         String nombre = txt_nombreSabor.getText().toString();
@@ -65,5 +67,10 @@ public class GuardarSaboresActivity extends AppCompatActivity {
                 break;
             }
         }
+    }
+
+    public void prevActivity(View view){
+        startActivity(new Intent(GuardarSaboresActivity.this, RuletaSabores.class));
+        finish();
     }
 }
