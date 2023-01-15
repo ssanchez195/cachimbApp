@@ -40,9 +40,6 @@ public class RuletaSabores extends AppCompatActivity {
 
         if(datos != "" && datos != "="){
             String[] separador = datos.split("/");
-            System.out.println(separador[0].replace("Bundle[{" ,""));
-            System.out.println(separador[1].replace("}]", ""));
-
             txt_sabor.setText(separador[0].replace("Bundle[{" ,""));
             txt_descripcion.setText(separador[1].replace("}]", ""));
         } else {

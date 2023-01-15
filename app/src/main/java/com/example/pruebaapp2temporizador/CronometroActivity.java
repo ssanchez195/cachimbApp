@@ -29,7 +29,7 @@ public class CronometroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cronometro);
         btn_start = (Button)findViewById(R.id.buttonPlay);
 
-        Started = true;
+        Started = false;
         spinnerMinu = (Spinner)findViewById(R.id.spinnerMinutos);
         toShow = (TextView)findViewById(R.id.txt_Crono);
         btn_volver = (Button)findViewById(R.id.btn_volver);
@@ -71,13 +71,13 @@ public class CronometroActivity extends AppCompatActivity {
         else
             minute = 300000;
 
-        if (Started) {
+        if (!Started) {
             //The "If" hace que se restablezca si el CountDownTimer está funcionando
             final long valor = minute;
             cuenta = new CountDownTimer(valor, 1000) {
                 @Override
                 public void onTick(long i) {
-                    if (!Started) {
+                    if (Started) {
                         long time = i / 1000;
                         int minute = (int) (time / 60);
                         long seconds = time % 60;
@@ -88,7 +88,7 @@ public class CronometroActivity extends AppCompatActivity {
                 }
                 @Override
                 public void onFinish() {
-                    if (!Started) {
+                    if (Started) {
                         MediaPlayer mp = MediaPlayer.create(CronometroActivity.this, R.raw.ninocantando);
                         mp.start();
                     }
@@ -96,12 +96,12 @@ public class CronometroActivity extends AppCompatActivity {
             }.start();
 
             btn_start.setText("Reiniciar");
-            Started = false;
+            Started = true;
 
         } else {
             Toast.makeText(this, "Contador reiniciado", Toast.LENGTH_SHORT).show();
             btn_start.setText("Iniciar");
-            Started = true;
+            Started = false;
             toShow.setText("00:00");
             cuenta.cancel();
         }

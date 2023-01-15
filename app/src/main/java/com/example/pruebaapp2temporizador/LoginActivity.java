@@ -4,8 +4,11 @@ package com.example.pruebaapp2temporizador;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -35,7 +38,6 @@ public class LoginActivity extends AppCompatActivity {
         boton_inicioSesion = (Button)findViewById(R.id.btn_iniciarSesion);
         txt_email = (EditText)findViewById(R.id.txt_email);
         txt_pass = (EditText)findViewById(R.id.txt_pass);
-
 
         boton_registro.setOnClickListener(view -> {
             String emailUser = txt_email.getText().toString().trim();
@@ -78,6 +80,11 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         }).addOnFailureListener(e -> Toast.makeText(LoginActivity.this, "Error al iniciar sesión", Toast.LENGTH_SHORT).show());
+    }
+
+    public void hideKeyboard(View view){
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     @Override
